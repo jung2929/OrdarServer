@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="ie9 no-focus" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-focus" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+
+    <title>오다 관리자 페이지</title>
+
+    <meta name="description"
+          content="OneUI - Admin Dashboard Template &amp; UI Framework created by pixelcave and published on Themeforest">
+    <meta name="author" content="pixelcave">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0">
+
+    <!-- Icons -->
+    <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
+    <link rel="shortcut icon" href="assets/img/favicons/favicon.png">
+
+    <link rel="icon" type="image/png" href="assets/img/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="assets/img/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="assets/img/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="assets/img/favicons/favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="assets/img/favicons/favicon-192x192.png" sizes="192x192">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon-180x180.png">
+    <!-- END Icons -->
+
+    <!-- Stylesheets -->
+    <!-- Web fonts -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,700%7COpen+Sans:300,400,400italic,600,700">
+
+    <!-- Page JS Plugins CSS -->
+    <link rel="stylesheet" href="assets/js/plugins/slick/slick.min.css">
+    <link rel="stylesheet" href="assets/js/plugins/slick/slick-theme.min.css">
+
+    <!-- Bootstrap and OneUI CSS framework -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" id="css-main" href="assets/css/oneui.css">
+
+    <!-- Custom Css -->
+    <!--<link rel="stylesheet" type="text/css" href="assets/js/plugins/select2/select2.min.css">-->
+    <!--<link rel="stylesheet" type="text/css" href="assets/js/plugins/select2/select2-bootstrap.min.css">-->
+
+    <!--<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/css/select2.min.css" rel="stylesheet"/>-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/ordar-map2.css">
+
+
+
+    <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
+    <!-- <link rel="stylesheet" id="css-theme" href="assets/css/themes/flat.min.css"> -->
+    <!-- END Stylesheets -->
+</head>
+<body>
+<!-- Page Container -->
+<!--
+    Available Classes:
+
+    'enable-cookies'             Remembers active color theme between pages (when set through color theme list)
+
+    'sidebar-l'                  Left Sidebar and right Side Overlay
+    'sidebar-r'                  Right Sidebar and left Side Overlay
+    'sidebar-mini'               Mini hoverable Sidebar (> 991px)
+    'sidebar-o'                  Visible Sidebar by default (> 991px)
+    'sidebar-o-xs'               Visible Sidebar by default (< 992px)
+
+    'side-overlay-hover'         Hoverable Side Overlay (> 991px)
+    'side-overlay-o'             Visible Side Overlay by default (> 991px)
+
+    'side-scroll'                Enables custom scrolling on Sidebar and Side Overlay instead of native scrolling (> 991px)
+
+    'header-navbar-fixed'        Enables fixed header
+-->
+<div id="page-container" class="sidebar-l sidebar-o side-scroll header-navbar-fixed">
+    <!-- Side Overlay-->
+    <aside id="side-overlay">
+        <!-- Side Overlay Scroll Container -->
+        <div id="side-overlay-scroll">
+            <!-- Side Header -->
+            <div class="side-header side-content">
+                <!-- Layout API, functionality initialized in App() -> uiLayoutApi() -->
+                <button class="btn btn-default pull-right" type="button" data-toggle="layout" data-action="side_overlay_close">
+                    <i class="fa fa-times"></i>
+                </button>
+                <span>
+                            <img class="img-avatar img-avatar32" src="assets/img/avatars/avatar10.jpg" alt="">
+                            <span class="font-w600 push-10-l">hmy6053</span>
+                        </span>
+            </div>
+            <!-- END Side Header -->
+
+            <!-- Side Content -->
+            <div class="side-content remove-padding-t">
+                <!-- Side Overlay Tabs -->
+                <div class="block pull-r-l border-t">
+                    <div class="block-content tab-content" style="padding-top:0px;">
+                        <!-- Overview Tab -->
+                        <div class="tab-pane fade fade-right in active" id="tabs-side-overlay-overview">
+                            <!-- Online Friends -->
+                            <div class="block pull-r-l">
+                                <div class="block-header bg-gray-lighter">
+                                    <ul class="block-options">
+                                        <li>
+                                            <button type="button" data-toggle="block-option" data-action="refresh_toggle" data-action-mode="demo"><i class="si si-refresh"></i></button>
+                                        </li>
+                                        <li>
+                                            <button type="button" data-toggle="block-option" data-action="content_toggle"></button>
+                                        </li>
+                                    </ul>
+                                    <h3 class="block-title">카테고리</h3>
+                                </div>
+                                <div class="block-content block-content-full">
+                                    <!-- Users Navigation -->
+                                    <ul class="nav-users remove-margin-b">
+                                        <li>
+
+                                            <a href="index.html" style="min-height:0px; height: 50px; padding: 15px 0px 15px 10px; color:#4a4a4a;">
+                                                <div class="col-sm-2"><i class="si si-bar-chart "></i></div>
+                                                <div class="col-sm-10">정산내역</div>
+
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="ordar-map.html" style="min-height:0px; height: 50px; padding: 15px 0px 15px 10px; color:#4a4a4a;">
+                                                <div class="col-sm-2"><i class="si si-pointer "></i></div>
+                                                <div class="col-sm-10">배달지역 관리</div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" style="min-height:0px; height: 50px; padding: 15px 0px 15px 10px; color:#4a4a4a;">
+                                                <div class="col-sm-2"><i class="si si-settings "></i></div>
+                                                <div class="col-sm-10">설정</div>
+
+                                            </a>
+                                        </li>
+
+                                    </ul>
+                                    <!-- END Users Navigation -->
+                                </div>
+                            </div>
+                            <!-- END Online Friends -->
+
+                        </div>
+                        <!-- END Overview Tab -->
+
+                    </div>
+                </div>
+                <!-- END Side Overlay Tabs -->
+            </div>
+            <!-- END Side Content -->
+        </div>
+        <!-- END Side Overlay Scroll Container -->
+    </aside>
+    <!-- END Side Overlay -->
+
+    <!-- Header -->
+    <header id="header-navbar" class="content-mini content-mini-full">
+        <!-- Header Navigation Right -->
+        <ul class="nav-header pull-right">
+            <li>
+                <div class="btn-group">
+                    <button class="btn btn-default btn-image dropdown-toggle" data-toggle="dropdown" type="button">
+                        <img src="assets/img/avatars/avatar10.jpg" alt="Avatar">
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li class="dropdown-header">Profile</li>
+                        <li>
+                            <a tabindex="-1" href="base_pages_inbox.html">
+                                <i class="si si-envelope-open pull-right"></i>
+                                <span class="badge badge-primary pull-right">3</span>Inbox
+                            </a>
+                        </li>
+                        <li>
+                            <a tabindex="-1" href="base_pages_profile.html">
+                                <i class="si si-user pull-right"></i>
+                                <span class="badge badge-success pull-right">1</span>Profile
+                            </a>
+                        </li>
+                        <li>
+                            <a tabindex="-1" href="javascript:void(0)">
+                                <i class="si si-settings pull-right"></i>Settings
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li class="dropdown-header">Actions</li>
+                        <li>
+                            <a tabindex="-1" href="base_pages_lock.html">
+                                <i class="si si-lock pull-right"></i>Lock Account
+                            </a>
+                        </li>
+                        <li>
+                            <a tabindex="-1" href="base_pages_login.html">
+                                <i class="si si-logout pull-right"></i>Log out
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <!-- Layout API, functionality initialized in App() -> uiLayoutApi() -->
+                <button class="btn btn-default" data-toggle="layout" data-action="side_overlay_toggle" type="button">
+                    <i class="fa fa-tasks"></i>
+                </button>
+            </li>
+        </ul>
+        <!-- END Header Navigation Right -->
+
+        <!-- Header Navigation Left -->
+        <ul class="nav-header pull-left">
+            <li class="hidden-md hidden-lg">
+                <!-- Layout API, functionality initialized in App() -> uiLayoutApi() -->
+                <button class="btn btn-default" data-toggle="layout" data-action="sidebar_toggle" type="button">
+                    <i class="fa fa-navicon"></i>
+                </button>
+            </li>
+            <li class="hidden-xs hidden-sm">
+                <!-- Layout API, functionality initialized in App() -> uiLayoutApi() -->
+                <button class="btn btn-default" data-toggle="layout" data-action="sidebar_mini_toggle" type="button">
+                    <i class="fa fa-ellipsis-v"></i>
+                </button>
+            </li>
+            <li>
+                <!-- Opens the Apps modal found at the bottom of the page, before including JS code -->
+                <button class="btn btn-default pull-right" data-toggle="modal" data-target="#apps-modal" type="button">
+                    <i class="si si-grid"></i>
+                </button>
+            </li>
+            <li class="visible-xs">
+                <!-- Toggle class helper (for .js-header-search below), functionality initialized in App() -> uiToggleClass() -->
+                <button class="btn btn-default" data-toggle="class-toggle" data-target=".js-header-search"
+                        data-class="header-search-xs-visible" type="button">
+                    <i class="fa fa-search"></i>
+                </button>
+            </li>
+            <li class="js-header-search header-search">
+                <form class="form-horizontal" action="base_pages_search.html" method="post">
+                    <div class="form-material form-material-primary input-group remove-margin-t remove-margin-b">
+                        <input class="form-control" type="text" id="base-material-text" name="base-material-text"
+                               placeholder="Search..">
+                        <span class="input-group-addon"><i class="si si-magnifier"></i></span>
+                    </div>
+                </form>
+            </li>
+        </ul>
+        <!-- END Header Navigation Left -->
+    </header>
+    <!-- END Header -->
+
+    <!-- Main Container -->
+    <main id="main-container">
+        <!-- Page Header -->
+        <div class="content bg-image overflow-hidden"
+             style="height:150px; background-image: url('../img/ordar-map/header.png');">
+        </div>
+        <!-- END Page Header -->
+
+        <!-- Stats -->
+        <div class="content bg-white border-b">
+            <div class="row items-push text-uppercase">
+                <div class="col-xs-6 col-sm-3">
+                    <div class="font-w700 text-gray-darker animated fadeIn">오늘의 주문 건수</div>
+                    <div class="text-muted animated fadeIn">
+                        <small><i class="si si-calendar"></i> TODAY</small>
+                    </div>
+
+                    <div class="h2 font-w300 text-primary animated flipInX" style="display: inline-block;">1,321<div style="font-size:60%; display: inline-block;" class="text-primary">건</div></div>
+                </div>
+                <div class="col-xs-6 col-sm-3">
+                    <div class="font-w700 text-gray-darker animated fadeIn">오늘의 주문 총액</div>
+                    <div class="text-muted animated fadeIn">
+                        <small><i class="si si-calendar"></i> TODAY</small>
+                    </div>
+                    <div class="h2 font-w300 text-primary animated flipInX" style="display: inline-block;">3,414,100<div style="font-size:60%; display: inline-block;" class="text-primary">원</div></div>
+                </div>
+                <div class="col-xs-6 col-sm-3">
+                    <div class="font-w700 text-gray-darker animated fadeIn">승인대기 주문건수</div>
+                    <div class="text-muted animated fadeIn">
+                        <small><i class="si si-calendar"></i> ALL TIME</small>
+                    </div>
+                    <div class="h2 font-w300 text-primary animated flipInX" style="display: inline-block;">297<div style="font-size:60%; display: inline-block;" class="text-primary">건</div></div>
+                </div>
+                <div class="col-xs-6 col-sm-3">
+                    <div class="font-w700 text-gray-darker animated fadeIn">등록된 업체 수</div>
+                    <div class="text-muted animated fadeIn">
+                        <small><i class="si si-calendar"></i> ALL TIME</small>
+                    </div>
+                    <div class="h2 font-w300 text-primary animated flipInX" style="display: inline-block;">31,401<div style="font-size:60%; display: inline-block;" class="text-primary">개</div></div>
+                </div>
+            </div>
+        </div>
+        <!-- END Stats -->
+
+        <!-- Page Content -->
+        <div class="content">
+            <div class="row" >
+                <div class="col-lg-8">
+                    <!-- Main Dashboard Chart -->
+                    <div class="block">
+                        <div class="block-header">
+                            <ul class="block-options">
+                                <li>
+                                    <button type="button" data-toggle="block-option" data-action="refresh_toggle"
+                                            data-action-mode="demo"><i class="si si-refresh"></i></button>
+                                </li>
+                            </ul>
+                            <h3 class="block-title font-w600">배달 지역 관리</h3>
+                        </div>
+                        <div class="">
+                            <div style="height: 374px;">
+                                <div id="map" style="width:100%;height:100%;"></div>
+                            </div>
+                        </div>
+                        <div class="block-content text-center">
+                            <div class="row items-push text-center">
+                                <div class="col-xs-6 col-lg-2">
+
+                                    <div class="h5 font-w600 text-left" style="font-size:95%; margin-bottom:10px;">일식수</div>
+
+                                    <select class="selectpicker" style="width: 80%; "
+                                            data-placeholder="">
+                                        <option value="1">0 ~ 100개</option>
+                                        <option value="2">100 ~ 150개</option>
+                                        <option value="3">150 ~ 300개</option>
+                                        <option value="4">300 ~ 500개</option>
+                                        <option value="5">500개 이상</option>
+                                    </select>
+                                </div>
+                                <div class="col-xs-6 col-lg-2">
+
+                                    <div class="h5 font-w600 text-left" style="font-size:95%;margin-bottom:10px;">오다가</div>
+                                    <select class="selectpicker " style="width: 80%;"
+                                            data-placeholder="">
+                                        <option value="1">0 ~ 100만원</option>
+                                        <option value="2">100 ~ 300만원</option>
+                                        <option value="3">300 ~ 500만원</option>
+                                        <option value="4">500 ~ 1,000만원</option>
+                                        <option value="5">1,000만원 이상</option>
+                                    </select>
+                                </div>
+                                <div class="col-xs-6 col-lg-2 ">
+
+                                    <div class="h5 font-w600 text-left" style="font-size:95%; margin-bottom:10px;">시간대</div>
+                                    <select class="selectpicker" style="width: 80%;"
+                                            data-placeholder="">
+                                        <option value="1">06:00 ~ 12:00</option>
+                                        <option value="2">12:00 ~ 18:00</option>
+                                        <option value="3">18:00 ~ 24:00</option>
+                                        <option value="4">24:00 ~ 06:00</option>
+                                    </select>
+                                </div>
+                                <div class="col-xs-6 col-lg-2 ">
+                                    <div class="h5 font-w600 text-left" style="font-size:95%; margin-bottom:10px;">차량종류</div>
+
+                                    <select class="selectpicker" style="width: 80%;"
+                                            data-placeholder="">
+                                        <option value="1">냉장탑차</option>
+                                        <option value="2">냉동탑차</option>
+                                        <option value="3">실온탑차</option>
+                                    </select>
+
+                                </div>
+                                <div class="col-xs-12 col-lg-4 ">
+                                    <button id="getGroupListBtn" class="btn btn-minw btn-primary" style="width:80%; height:50px; margin-top:10px;"
+                                            type="button">필터 적용
+                                    </button>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <!-- END Main Dashboard Chart -->
+                </div>
+                <!--<div id="order_info" class="col-lg-4">-->
+                    <!--&lt;!&ndash; Latest Sales Widget &ndash;&gt;-->
+                    <!--<div class="block">-->
+                        <!--<div class="block-header">-->
+                            <!--<div><b>상호명</b> 김씨의 맛있는 돼지</div>-->
+                        <!--</div>-->
+                        <!--<div class="block-content bg-gray-lighter">-->
+                            <!--<div class="row items-push">-->
+                                <!--<div class="col-lg-4 visible-lg">-->
+                                    <!--<div class="font-w600">주문 요청 날짜</div>-->
+                                    <!--<div class="">2017.09.12</div>-->
+                                <!--</div>-->
+                                <!--<div class="col-lg-4 col-xs-6">-->
+                                    <!--<div class="font-w600">총 상품개수</div>-->
+                                    <!--<div class="">12개</div>-->
+                                <!--</div>-->
+                                <!--<div class="col-lg-4 col-xs-6">-->
+                                    <!--<div class="font-w600">총 오다가</div>-->
+                                    <!--<div class="text-primary font-w600" style="font-size:160%; display: inline-block;">100,466</div><div style="font-size:120%; display: inline-block;" class="text-primary font-w600">원</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="block-content">-->
+                            <!--<div class="pull-t pull-r-l">-->
+                                <!--&lt;!&ndash; Slick slider (.js-slider class is initialized in App() -> uiHelperSlick()) &ndash;&gt;-->
+                                <!--&lt;!&ndash; For more info and examples you can check out http://kenwheeler.github.io/slick/ &ndash;&gt;-->
+                                <!--<div class="remove-margin-b">-->
+                                    <!--<div>-->
+                                        <!--<table class="table remove-margin-b font-s13">-->
+                                            <!--<tbody>-->
+                                            <!--<tr>-->
+                                                <!--<td style="font-size: 90%; color:#4b4b4b;">-->
+                                                    <!--일등급 유정란 30구-->
+                                                <!--</td>-->
+                                                <!--<td class="hidden-xs text-muted text-right" style="width: 60px;">1건</td>-->
+                                                <!--<td class="text-primary text-right font-w600"-->
+                                                    <!--style="font-size: 90%; width: 80px;">7,900원-->
+                                                <!--</td>-->
+                                            <!--</tr>-->
+                                            <!--<tr>-->
+                                                <!--<td style="font-size: 90%; color:#4b4b4b;">[해발500포크] 냉장 삼겹살 수육용 / 찌개용 /-->
+                                                    <!--... 30구-->
+                                                <!--</td>-->
+                                                <!--<td class="hidden-xs text-muted text-right">3건</td>-->
+                                                <!--<td class="text-primary text-right font-w600" style="font-size: 90%;">-->
+                                                    <!--43,500원-->
+                                                <!--</td>-->
+                                            <!--</tr>-->
+                                            <!--<tr>-->
+                                                <!--<td style="font-size: 90%; color:#4b4b4b;">순창 태양표 고추장</td>-->
+                                                <!--<td class="hidden-xs text-muted text-right">1건</td>-->
+                                                <!--<td class="text-primary text-right font-w600" style="font-size: 90%;">-->
+                                                    <!--4,000원-->
+                                                <!--</td>-->
+                                            <!--</tr>-->
+                                            <!--<tr>-->
+                                                <!--<td style="font-size: 90%; color:#4b4b4b;">깐 양파 20개 (망)</td>-->
+                                                <!--<td class="hidden-xs text-muted text-right">1건</td>-->
+                                                <!--<td class="text-primary text-right font-w600" style="font-size: 90%;">-->
+                                                    <!--11,500원-->
+                                                <!--</td>-->
+                                            <!--</tr>-->
+                                            <!--<tr>-->
+                                                <!--<td style="font-size: 90%; color:#4b4b4b;">오뚜기 라면사리 20개입 1박스</td>-->
+                                                <!--<td class="hidden-xs text-muted text-right">1건</td>-->
+                                                <!--<td class="text-primary text-right font-w600" style="font-size: 90%;">-->
+                                                    <!--7,866원-->
+                                                <!--</td>-->
+                                            <!--</tr>-->
+                                            <!--<tr>-->
+                                                <!--<td style="font-size: 90%; color:#4b4b4b;">하림 안심 닭가슴살 500g (팩)</td>-->
+                                                <!--<td class="hidden-xs text-muted text-right">4건</td>-->
+                                                <!--<td class="text-primary text-right font-w600" style="font-size: 90%;">-->
+                                                    <!--22,320원-->
+                                                <!--</td>-->
+                                            <!--</tr>-->
+                                            <!--<tr>-->
+                                                <!--<td style="font-size: 90%; color:#4b4b4b;">백설 콩기름 100% 1L</td>-->
+                                                <!--<td class="hidden-xs text-muted text-right">1건</td>-->
+                                                <!--<td class="text-primary text-right font-w600" style="font-size: 90%;">-->
+                                                    <!--3,380원-->
+                                                <!--</td>-->
+                                            <!--</tr>-->
+                                            <!--</tbody>-->
+                                        <!--</table>-->
+                                    <!--</div>-->
+
+                                <!--</div>-->
+                                <!--&lt;!&ndash; END Slick slider &ndash;&gt;-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--&lt;!&ndash; END Latest Sales Widget &ndash;&gt;-->
+                <!--</div>-->
+
+                <div id="order_info" class="col-lg-4">
+                    <!-- Latest Sales Widget -->
+                    <div class="block">
+                        <div class="block-header">
+                            <div><b>그룹명</b> A - 1234</div>
+                        </div>
+                        <div class="block-content bg-gray-lighter">
+                            <div class="row items-push">
+                                <div class="col-lg-6 col-xs-6">
+                                    <div class="font-w600">총 상품개수</div>
+                                    <div class="">41개</div>
+                                </div>
+                                <div class="col-lg-6 col-xs-6">
+                                    <div class="font-w600">총 오다가</div>
+                                    <div class="text-primary font-w600" style="font-size:160%; display: inline-block;">397,539</div><div style="font-size:120%; display: inline-block;" class="text-primary font-w600">원</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="block-content">
+                            <div class="pull-t pull-r-l">
+                                <!-- Slick slider (.js-slider class is initialized in App() -> uiHelperSlick()) -->
+                                <!-- For more info and examples you can check out http://kenwheeler.github.io/slick/ -->
+                                <div class="remove-margin-b">
+                                    <div>
+                                        <table class="table remove-margin-b font-s13">
+                                            <tbody>
+                                            <tr>
+                                                <td style="font-size: 90%; color:#4b4b4b;">
+                                                    일등급 유정란 30구
+                                                </td>
+                                                <td class="hidden-xs text-muted text-right" style="width: 60px;">1건</td>
+                                                <td class="text-primary text-right font-w600"
+                                                    style="font-size: 90%; width: 80px;">7,900원
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-size: 90%; color:#4b4b4b;">[해발500포크] 냉장 삼겹살 수육용 / 찌개용 /
+                                                    ... 30구
+                                                </td>
+                                                <td class="hidden-xs text-muted text-right">3건</td>
+                                                <td class="text-primary text-right font-w600" style="font-size: 90%;">
+                                                    43,500원
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-size: 90%; color:#4b4b4b;">순창 태양표 고추장</td>
+                                                <td class="hidden-xs text-muted text-right">1건</td>
+                                                <td class="text-primary text-right font-w600" style="font-size: 90%;">
+                                                    4,000원
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-size: 90%; color:#4b4b4b;">깐 양파 20개 (망)</td>
+                                                <td class="hidden-xs text-muted text-right">1건</td>
+                                                <td class="text-primary text-right font-w600" style="font-size: 90%;">
+                                                    11,500원
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-size: 90%; color:#4b4b4b;">오뚜기 라면사리 20개입 1박스</td>
+                                                <td class="hidden-xs text-muted text-right">1건</td>
+                                                <td class="text-primary text-right font-w600" style="font-size: 90%;">
+                                                    7,866원
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-size: 90%; color:#4b4b4b;">하림 안심 닭가슴살 500g (팩)</td>
+                                                <td class="hidden-xs text-muted text-right">4건</td>
+                                                <td class="text-primary text-right font-w600" style="font-size: 90%;">
+                                                    22,320원
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-size: 90%; color:#4b4b4b;">백설 콩기름 100% 1L</td>
+                                                <td class="hidden-xs text-muted text-right">1건</td>
+                                                <td class="text-primary text-right font-w600" style="font-size: 90%;">
+                                                    3,380원
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                        <button class="btn btn-minw btn-primary" style="width:100%; height:50px;"
+                                                type="button">주문 요청 승인하기
+                                        </button>
+                                    </div>
+
+                                </div>
+                                <!-- END Slick slider -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END Latest Sales Widget -->
+                </div>
+            </div>
+
+        </div>
+        <!-- END Page Content -->
+    </main>
+    <!-- END Main Container -->
+
+    <!-- Footer -->
+    <footer id="page-footer" class="content-mini content-mini-full font-s12 bg-gray-lighter clearfix">
+        <div class="pull-right">
+            Powered by <a class="font-w600" href="#" target="_blank">오다</a>
+        </div>
+
+    </footer>
+    <!-- END Footer -->
+</div>
+<!-- END Page Container -->
+
+<!-- Apps Modal -->
+<!-- Opens from the button in the header -->
+<div class="modal fade" id="apps-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-sm modal-dialog modal-dialog-top">
+        <div class="modal-content">
+            <!-- Apps Block -->
+            <div class="block block-themed block-transparent">
+                <div class="block-header bg-primary-dark">
+                    <ul class="block-options">
+                        <li>
+                            <button data-dismiss="modal" type="button"><i class="si si-close"></i></button>
+                        </li>
+                    </ul>
+                    <h3 class="block-title">Apps</h3>
+                </div>
+                <div class="block-content">
+                    <div class="row text-center">
+                        <div class="col-xs-6">
+                            <a class="block block-rounded" href="base_pages_dashboard.html">
+                                <div class="block-content text-white bg-default">
+                                    <i class="si si-speedometer fa-2x"></i>
+                                    <div class="font-w600 push-15-t push-15">Backend</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-xs-6">
+                            <a class="block block-rounded" href="frontend_home.html">
+                                <div class="block-content text-white bg-modern">
+                                    <i class="si si-rocket fa-2x"></i>
+                                    <div class="font-w600 push-15-t push-15">Frontend</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END Apps Block -->
+        </div>
+    </div>
+</div>
+<!-- END Apps Modal -->
+
+<!-- OneUI Core JS: jQuery, Bootstrap, slimScroll, scrollLock, Appear, CountTo, Placeholder, Cookie and App.js -->
+<script src="assets/js/core/jquery.min.js"></script>
+<script src="assets/js/core/bootstrap.min.js"></script>
+<script src="assets/js/core/jquery.slimscroll.min.js"></script>
+<script src="assets/js/core/jquery.scrollLock.min.js"></script>
+<script src="assets/js/core/jquery.appear.min.js"></script>
+<script src="assets/js/core/jquery.countTo.min.js"></script>
+<script src="assets/js/core/jquery.placeholder.min.js"></script>
+<script src="assets/js/core/js.cookie.min.js"></script>
+
+<script src="assets/js/app.js"></script>
+
+<!-- Page Plugins -->
+<script src="assets/js/plugins/slick/slick.min.js"></script>
+
+
+<!-- Page JS Code -->
+<!--<script src="assets/js/pages/base_pages_dashboard.js"></script>-->
+
+
+<!-- Custom JS Code -->
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5a368fb3bd2db850a7446547930d030d"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/js/select2.min.js"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+<script type="text/javascript" src="../js/classes.js"></script>
+
+
+<script type="text/javascript" src="../js/ordar-map.js"></script>
+
+<script>
+
+    jQuery(function () {
+        // Init page helpers (Slick Slider plugin)
+//        App.initHelpers(['slick','select2','tooltip']);
+        $(document).ready(function () {
+//            $('.js-example-basic-single').select2();
+        });
+
+
+    });
+
+
+</script>
+</body>
+</html>
